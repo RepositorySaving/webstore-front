@@ -38,7 +38,7 @@ app.engine('hbs', expressHandlebars({
 app.set('views', './src/app/view');
 app.set('view engine', 'hbs');
 
-app.use('/shop', shopRoutes);
+app.use('/', shopRoutes);
 app.use('/account', accountRoutes);
 app.use('/admin', adminRoutes);
 
