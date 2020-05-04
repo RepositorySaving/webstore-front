@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
-app.use('/static', express.static(path.join(__dirname, '/public')))
+app.use('/static', express.static(path.join(__dirname, '/../../public')))
 
 app.engine('hbs', expressHandlebars({
     handlebars: allowInsecurePrototypeAccess(handlebars),
