@@ -16,7 +16,12 @@ router.get("/cash", (req, res) => {
 });
 
 router.get("/checkout", (req, res) => {
-    res.render('pages/checkout', { title: 'HYLEX © - Checkout' })
+    if (req.session.user != null) {
+        res.render('pages/checkout', { title: 'HYLEX © - Checkout' })
+        console.log(req.session.user)
+    } else {
+        res.redirect('/account/login')
+    }
 });
 
 /////////////////////

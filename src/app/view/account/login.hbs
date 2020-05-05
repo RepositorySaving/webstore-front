@@ -49,7 +49,7 @@
                             <a href="/shop/rankup/vips" target="" class="nav-link disabled"><i class="fab fa-fort-awesome"></i> RankUP</a>
                         </li>-->
                         <li class="nav-item">
-                            <a href="/minigames/vip" target="" class="nav-link"><i class="fas fa-trophy"></i> Minigames</a>
+                            <a href="/minigames/vips" target="" class="nav-link"><i class="fas fa-trophy"></i> Minigames</a>
                         </li>
                         <li class="nav-item">
                             <a href="/cash" target="" class="nav-link"><i class="fas fa-coins"></i> Cash</a>
@@ -76,7 +76,7 @@
                             <a href="/shop/rankup/vips" target="" class="nav-link disabled"><i class="fab fa-fort-awesome"></i> RankUP</a>
                         </li>-->
                         <li class="nav-item">
-                            <a href="/minigames/vip" target="" class="nav-link"><i class="fas fa-trophy"></i> Minigames</a>
+                            <a href="/minigames/vips" target="" class="nav-link"><i class="fas fa-trophy"></i> Minigames</a>
                         </li>
                         <li class="nav-item">
                             <a href="/cash" target="" class="nav-link"><i class="fas fa-coins"></i> Cash</a>
@@ -98,22 +98,40 @@
 
 		<div class="container">
 
-			<div class="alert alert-danger">
-				<li> </li>
-			</div>
+            {{#if errors}}
+                {{#each errors}}
+                    <div class="alert alert-danger">
+                        <li>{{msg}}</li>
+                    </div>
+                {{/each}}
+            {{/if}}
+
+            {{#if error_msg}}
+                <div class="alert alert-danger">
+                    <li>{{error_msg}}</li>
+                </div>
+            {{else}}
+            {{/if}}
+
+            {{#if error}}
+                <div class="alert alert-danger">
+                    <li>{{error}}</li>
+                </div>
+            {{else}}
+            {{/if}}
 
 			<div class="card-body account">
 				<div class="row justify-content-center">
 					<div class="col-lg-6">
-						<form action="" method="post" id="form-login">
+						<form method="post" id="form-login">
 							<div class="form-group">
 								<label for="email">E-mail</label>
 								<input type="email" name="email" class="form-control" id="email">
 							</div>
 							<div class="form-group">
-								<label for="password">Senha</label>
-								<input type="password" name="password" class="form-control" id="password" placeholder="Senha">
-								<a href="/forgot_password" class="meta">Esqueceu a senha?</a>
+								<label for="password">Nickname</label>
+								<input type="text" name="nickname" class="form-control" id="nickname">
+								<a href="https://hylex.net/register" target="_black" class="meta">Não possui uma conta? Registre-se aqui!</a>
 							</div>
 							<button type="submit" class="btn-login">Acessar</button>
 						</form>
