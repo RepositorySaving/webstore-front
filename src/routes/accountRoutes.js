@@ -9,7 +9,7 @@ router.get("/login", (req, res) => {
     res.render('account/login', { title: 'HYLEX © - Entrar' })
 });
 
-router.get("/loginteste", userController.index)
+router.post("/login");
 
 router.get("/last_orders", (req, res) => {
     res.render('account/last_orders', { title: 'HYLEX © - Conta' })

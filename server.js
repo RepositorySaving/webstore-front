@@ -2,14 +2,13 @@
 
 const express = require('express');
 const app = express();
-const cors = require('cors');
 
 const handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 const bodyParser = require('body-parser');
-const path = require('path');
+const flash = require('connect-flash');
 
 require('dotenv').config();
 require('./src/config/colors');
@@ -23,12 +22,11 @@ const accountRoutes = require('./src/routes/accountRoutes')
 // ||| [ CONFIGURATION] |||
 // ||||||||||||||||||||||||||||
 
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static('public'));
+app.use(flash());
 
 app.engine('hbs', expressHandlebars({
     handlebars: allowInsecurePrototypeAccess(handlebars),

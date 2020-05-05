@@ -7,6 +7,10 @@ router.get("/", (req, res) => {
     res.render('pages/index', { title: 'HYLEX © - Loja' })
 });
 
+router.get("/ipn", (req, res) => {
+    console.log(req)
+});
+
 router.get("/cash", (req, res) => {
     res.render('shop/cash', { title: 'HYLEX © - Cash' })
 });
