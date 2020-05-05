@@ -979,7 +979,7 @@ body {
     margin-top: -15px;
 }
 
-.card-cash p {
+.card-cash .additional-cash {
     color: rgb(80, 80, 80);
     font-size: 15px;
     font-weight: 500;
